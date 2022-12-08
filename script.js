@@ -7,26 +7,27 @@ class Keyboard
     }
     lightUpButton(button)
     {
-        button.classList = "active";
+        button.classList.add("active");
     }
     unlightUpButton(button)
     {
-        button.classList = ""
+        button.classList.remove("active");
     }
 }
 
 const keyboard = new Keyboard();
 
 keyboard.keyButtonArray.forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("mousedown", () => {
         keyboard.lightUpButton(button)
-        setTimeout(()=>{
-            unlightUpButton(button)
-        }, 500)
+    })
+    button.addEventListener("mouseup", () => {
+        keyboard.unlightUpButton(button)
     })
 })
 
 document.addEventListener("keydown", (event)=>{
+    console.log(event.key)
     let button = document.getElementById(event.key) 
     keyboard.lightUpButton(button)
 })

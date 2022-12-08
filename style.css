@@ -20,7 +20,16 @@ main{
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
 }
-
+.input-field{
+    min-height: 150px;
+    resize: none;
+    font-size: 1.5rem;
+    font-family: inherit;
+    border: none;
+}
+.input-field:focus-visible{
+    border: none;
+}
 .keyboard-container{
     display: grid;
     justify-content: center;
@@ -33,6 +42,7 @@ main{
 }
 .span-2-columns{grid-column: span 2;}
 .span-4-columns{grid-column: span 4;}
+.span-all-columns{grid-column: span 12;}
 
 .span-2-rows{grid-row: span 2;}
 
